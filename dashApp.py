@@ -4,7 +4,7 @@ import pandas as pd
 
 DATA_PATH = "./output.csv"
 COLORS = {
-    "bg-color": "#0d1117",
+    "bg-color": "#363636",
     "font": "#F5F5F5",
 }
 
@@ -28,14 +28,19 @@ app.layout = html.Div([
             {'label': 'west', 'value':'west'},
             {'label': 'all', 'value':'all'}
             ],
-        value = 'all')),
+        value = 'all',
+        style={
+            "background-color":'#696969',
+        }
+        )),
+
 
     html.Div(dcc.Graph(id='salesGraph'),
-             style={
-                "background-color": "#708090",
+             style={'height': '90%'
              })
 
 ], style={'width': '100%',
+            'height': '100vh',
             "textAlign": "center",
             'display': 'inline-block', 
              "background-color": COLORS["bg-color"],
